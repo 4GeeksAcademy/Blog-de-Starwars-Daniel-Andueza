@@ -1,14 +1,13 @@
 // Import necessary components and functions from react-router-dom.
 
-import {
-    createBrowserRouter,
-    createRoutesFromElements,
-    Route,
-} from "react-router-dom";
+import {createBrowserRouter,createRoutesFromElements, Route,} from "react-router-dom";
 import { Layout } from "./pages/Layout";
-import { Home } from "./pages/Home";
+import Home from "./pages/Home";
 import { Single } from "./pages/Single";
 import { Demo } from "./pages/Demo";
+import People from "./pages/People.jsx";
+import Planets from "./pages/Planets.jsx";
+import Vehicles from "./pages/Vehicles.jsx";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -25,6 +24,9 @@ export const router = createBrowserRouter(
         <Route path= "/" element={<Home />} />
         <Route path="/single/:theId" element={ <Single />} />  {/* Dynamic route for single items */}
         <Route path="/demo" element={<Demo />} />
+        <Route element={<People />} path="/people/:uid" />
+        <Route element={<Planets />} path="/planets/:uid" />
+        <Route element={<Vehicles />} path="/vehicles/:uid" />
       </Route>
     )
 );
